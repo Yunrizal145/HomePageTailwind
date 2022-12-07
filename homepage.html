@@ -10,125 +10,184 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
+
     <title>Homepage</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Martel&display=swap');
+    </style>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          
+            body{
+                font-family: 'Martel', sans-serif;
+            }
+
+            .navbar-scroll{
+                @apply fixed z-50 bg-white bg-opacity-70 shadow-lg;
+                backdrop-filter: blur(3px);
+            }
+
+            .hamburger-costum{
+                @apply w-[30px] h-[2px] my-2 block bg-black;
+            }
+
+            .hamburger-click > span:nth-child(1) {
+                @apply -rotate-45
+            }
+
+            .hamburger-click > span:nth-child(2) {
+                @apply scale-0
+            }
+
+            .hamburger-click > span:nth-child(3) {
+                @apply rotate-45
+            }
+            
+        }
+      </style>
 </head>
 <body>
 
     <!-- Header Start -->
-    <header class="bg-gradient-to-b from-white via-blue-100 to-white">
-        <div class="px-24 py-5 flex gap-10 justify-between mx-auto items-center text-lg fixed top-0 left-0 right-0 z-50 bg-white">
-            <div class="font-bold flex gap-3 items-center">
-                <img src="./components/logo.svg" alt="Logo">Mangcoding
-                <nav class="px-16">
-                    <ul class="font-medium flex items-center gap-5">
-                        <li class="hover:text-slate-300"><a href="#">Home</a></li>
-                        <li class="text-slate-300 hover:text-slate-500"><a href="#">About</a></li>
-                        <li class="text-slate-300 hover:text-slate-500"><a href="#">Services</a></li>
-                        <li class="text-slate-300 hover:text-slate-500"><a href="#">Our Work</a></li>
-                        <li class="text-slate-300 hover:text-slate-500"><a href="#">Blog</a></li>
-                        <li class="text-slate-300 hover:text-slate-500"><a href="#">Resources</a></li>
-                        <li class="text-slate-300 hover:text-slate-500"><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
+    <header class="w-full flex bg-gradient-to-b from-white via-blue-200 to-white ">
+        <div id="navbar-top" class="px-2 py-3 gap-10 justify-between mx-auto items-center fixed top-0 left-0 right-0 z-50 bg-white">
+            <div class="font-bold flex items-center px-6">
+                <a href="#" class="flex items-center gap-2 ">
+                    <img src="./components/logo.svg" alt="Logo">
+                    <span>Mangcoding</span>
+                </a>
+                
+                <div class="w-full flex items-center justify-between px-4">
+                    
+                    <nav id="navbar" class="hidden w-full absolute py-4 bg-sky-400 shadow-lg rounded-lg left-0 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:mt-2 ">
+                        <ul class="block lg:flex lg:justify-center ">
+                            <li class="group">
+                                <a href="#home" class="mx-4 flex py-3 text-white text-xl lg:text-slate-400 hover:text-slate-500 lg:text-base lg:hover:text-black">About</a>
+                            </li>
+                            <li class="group">
+                                <a href="#about" class="mx-4 flex py-3 text-white text-xl lg:text-slate-400 hover:text-slate-500 lg:text-base lg:hover:text-black">Service</a>
+                            </li>
+                            <li class="group">
+                                <a href="#service" class="mx-4 flex py-3 text-white text-xl lg:text-slate-400 hover:text-slate-500 lg:text-base lg:hover:text-black">Our Work</a>
+                            </li>
+                            <li class="group">
+                                <a href="#download" class="mx-4 flex py-3 text-white text-xl lg:text-slate-400 hover:text-slate-500 lg:text-base lg:hover:text-black">Blog</a>
+                            </li>
+                            <li class="group">
+                                <a href="#download" class="mx-4 flex py-3 text-white text-xl lg:text-slate-400 hover:text-slate-500 lg:text-base lg:hover:text-black">Resources</a>
+                            </li>
+                            <li class="group">
+                                <a href="#download" class="mx-4 flex py-3 text-white text-xl lg:text-slate-400 hover:text-slate-500 lg:text-base lg:hover:text-black">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
+                        <span class="hamburger-costum transition duration-300 ease-in-out origin-top-right"></span>
+                        <span class="hamburger-costum transition duration-300 ease-in-out"></span>
+                        <span class="hamburger-costum transition duration-300 ease-in-out origin-bottom-right"></span>
+                    </button>
+                    
+                    <div class=" flex items-center pl-20 ">
+                        <button class="w-[50px]">
+                            <img src="./components/search.svg" alt="search">
+                        </button>
+                        <button class="px-6 py-3  bg-sky-400 rounded-full text-white font-normal hover:bg-sky-600">GetStarted</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="flex gap-10">
-                <button>
-                    <img src="./components/search.svg" alt="search">
-                </button>
-                <button class="px-6 py-3 bg-sky-400 rounded-full text-white font-normal hover:bg-sky-600">Get Started</button>
-            </div>
+
         </div>
 
 
-        <div class="pt-64">
-            <div class="w-[800px] h-[120px] mx-auto text-center text-6xl font-semibold">
+        <div class="pt-[150px] mx-auto block lg:pt-[250px]">
+            <div class="w-full h-[120px] text-center text-4xl font-semibold lg:w-[800px] lg:mx-auto lg:text-5xl">
                 It's Fun To Build a Website With The <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-blue-400">Mangcoding Team</span>
             </div>
-            <div class="mt-10 w-[750px] h-[100px] mx-auto text-center text-xl font-normal text-slate-500">
+            <div class="w-full h-[100px] mx-auto text-center text-sm font-normal text-slate-500 lg:mt-10 lg:w-[750px] lg:text-xl  ">
                 The Mangcoding team will help build a website for your company with quality and guaranteed services, with custom templates you can create a website as you like.
             </div>
-            <div class="flex flex-wrap gap-16 items-center justify-center">
-                <button class="px-6 py-3 bg-sky-400 rounded-full text-white font-normal hover:bg-sky-600">Get Started</button>
+            <div class="flex flex-wrap gap-6 items-center justify-center lg:mt-5">
+                <button class="px-4 py-2 bg-sky-400 rounded-full text-sm text-white font-normal hover:bg-sky-600">Get Started</button>
                 <div class="flex gap-2 font-medium underline">
                     Explore Our Blog
                     <img src="./components/arrow-right.svg" alt="">
                 </div>
             </div>
+            <div class="w-[450px] mx-auto mt-8 lg:w-[800px] ">
+                <img src="./components/thumbnail1.png" alt="thumbnail" class="shadow-2xl">
+            </div>
         </div>
 
-
-        <div class="w-[800px] mx-auto mt-14">
-            <img src="./components/thumbnail1.png" alt="thumbnail" class="shadow-2xl">
-        </div>
     </header>
     <!-- Header End -->
 
 
     <!-- Brands Start -->
-    <div class="w-full bg-white">
-        <div class="text-center pt-8 font-medium text-slate-700 text-xl">
+    <div class="w-full bg-white"> 
+        <div class="text-center pt-8 font-medium text-slate-700 text-lg lg:text-xl">
             Brands that trust us
         </div>
-        <div class="flex flex-wrap gap-10 items-center justify-center pb-14">
-            <img src="./components/brand1.png" alt="Brands1" class="w-[115px]">
-            <img src="./components/brand2.png" alt="Brands2" class="w-[115px]">
-            <img src="./components/brand3.png" alt="Brands3" class="w-[115px]">
-            <img src="./components/brand4.png" alt="Brands4" class="w-[115px]">
-            <img src="./components/brand5.png" alt="Brands5" class="w-[115px]">
-            <img src="./components/brand6.png" alt="Brands6" class="w-[115px]">
+        <div class="flex flex-wrap gap-10 items-center justify-center py-6 lg:pb-14">
+            <img src="./components/brand1.png" alt="Brands1" class="w-[80px] lg:w-[115px] ">
+            <img src="./components/brand2.png" alt="Brands2" class="w-[80px] lg:w-[115px] ">
+            <img src="./components/brand3.png" alt="Brands3" class="w-[80px] lg:w-[115px] ">
+            <img src="./components/brand4.png" alt="Brands4" class="w-[80px] lg:w-[115px] ">
+            <img src="./components/brand5.png" alt="Brands5" class="w-[80px] lg:w-[115px] ">
+            <img src="./components/brand6.png" alt="Brands6" class="w-[80px] lg:w-[115px] ">
         </div>
-    </div>
+    </div> 
     <!-- Brands End -->
 
 
     <!-- Service Start -->
-    <section class="w-full pb-36 bg-gradient-to-bl from-white via-sky-100 to-purple-100">
-        <div class="flex flex-wrap items-center justify-between">
-            <div class="w-[850px] mx-auto pt-28 pr-44 pb-10">
-                <h1 class="text-5xl font-semibold py-4">Services</h1>
-                <p class="text-lg text-slate-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate facere distinctio obcaecati quos delectus dicta maxime culpa corrupti veniam vel.</p>
+    <section class="w-full pb-36  bg-gradient-to-bl from-white via-sky-100 to-purple-100"> 
+        <div class="flex flex-wrap items-center justify-between ">
+            <div class="w-[550px] pl-4 pt-5 pb-10 lg:w-[850px] mx-auto lg:pt-28 lg:pr-44">
+                <h1 class="text-4xl font-semibold py-4 lg:text-5xl">Services</h1>
+                <p class="text-base text-slate-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate facere distinctio obcaecati quos delectus dicta maxime culpa corrupti veniam vel.</p>
             </div>
-            <button class="px-6 py-3 bg-sky-400 rounded-full text-white font-normal mx-auto hover:bg-sky-600">Build Website</button>
+            <button class="px-20 py-3 lg:px-6 bg-sky-400 rounded-full text-base text-white font-normal mx-auto hover:bg-sky-600">Build Website</button>
         </div>
 
-        <div class="w-[1250px] mx-auto grid grid-rows-2 grid-flow-col gap-5 text-center ">
-            <div class="w-[370px] px-8 py-2 bg-white mx-auto rounded-xl flex flex-wrap items-center justify-center">
-                <div class="w-[150px] py-10">
+        <div class="w-full mx-auto pt-8 grid grid-rows-2 grid-flow-col gap-5 text-center lg:w-[1250px]">
+            <div class="w-[150px] px-8 py-2 bg-white mx-auto rounded-xl flex flex-wrap items-center justify-center lg:w-[370px] ">
+                <div class="w-[70px] py-5 lg:w-[150px] lg:py-10 ">
                     <img src="./components/service1.png" alt="service1">
                 </div>
-                <h1 class="font-bold text-lg">Shopify Theme Development</h1>
-                <p class="py-4 text-slate-600 font-medium text-sm">Start from 700 USD for project base or 35 USD per hour</p>
+                <h1 class="font-bold text-sm">Shopify Theme Development</h1>
+                <p class="py-2 text-slate-600 font-medium text-xs">Start from 700 USD for project base or 35 USD per hour</p>
             </div>
-            <div class="w-[370px] px-8 py-2 bg-white mx-auto rounded-xl flex flex-wrap items-center justify-center ">
-                <div class="w-[150px] py-10">
+            <div class="w-[150px] px-8 py-2 bg-white mx-auto rounded-xl flex flex-wrap items-center justify-center lg:w-[370px] ">
+                <div class="w-[70px] py-5 lg:w-[150px] lg:py-10">
                     <img src="./components/service3.png" alt="service1">
                 </div>
-                <h1 class="font-bold text-lg">WordPress Theme Development</h1>
-                <p class="py-4 text-slate-600 font-medium text-sm">Start from 600 USD for project base or 35 USD per hour</p>
+                <h1 class="font-bold text-sm">WordPress Theme Development</h1>
+                <p class="py-2 text-slate-600 font-medium text-xs">Start from 600 USD for project base or 35 USD per hour</p>
             </div>
-            <div class="w-[370px] px-8 py-2 bg-white mx-auto rounded-xl flex flex-wrap items-center justify-center">
-                <div class="w-[100px] py-10">
+            <div class="w-[150px] px-8 py-2 bg-white mx-auto rounded-xl flex flex-wrap items-center justify-center lg:w-[370px] ">
+                <div class="w-[70px] py-5 lg:w-[150px] lg:py-10">
                     <img src="./components/service2.png" alt="service1">
                 </div>
-                <h1 class="font-bold text-lg">Web Application Development</h1>
-                <p class="py-4 text-slate-600 font-medium text-sm">Start from 1000 USD for project base or 35 USD per hour</p>
+                <h1 class="font-bold text-sm">Web Application Development</h1>
+                <p class="py-2 text-slate-600 font-medium text-xs">Start from 1000 USD for project base or 35 USD per hour</p>
             </div>
-            <div class="w-[370px] px-8 py-2 bg-white mx-auto rounded-xl flex flex-wrap items-center justify-center ">
-                <div class="w-[120px] py-10">
+            <div class="w-[150px] px-8 py-2 bg-white mx-auto rounded-xl flex flex-wrap items-center justify-center lg:w-[370px] ">
+                <div class="w-[70px] py-5 lg:w-[150px] lg:py-10">
                     <img src="./components/service4.png" alt="service1">
                 </div>
-                <h1 class="font-bold text-lg">Custom App/Plugins Development</h1>
-                <p class="py-4 text-slate-600 font-medium text-sm">Start from 300 USD for project base or 35 USD per hour</p>
+                <h1 class="font-bold text-sm">Custom App/Plugins Development</h1>
+                <p class="py-2 text-slate-600 font-medium text-xs">Start from 300 USD for project base or 35 USD per hour</p>
             </div>
-            <div class="w-[370px] px-10 py-2 bg-white mx-auto rounded-xl flex flex-wrap items-center justify-center row-span-2 relative">
-                <div class="w-[150px]">
+            <div class="w-[150px] px-10 py-2 bg-white mx-auto rounded-xl flex flex-wrap items-center justify-center row-span-2 relative lg:w-[370px]">
+                <div class="w-[70px] lg:w-[150px]">
                     <img src="./components/service5.png" alt="service1">
                 </div>
                 <h1 class="font-bold text-lg">Assistans Service</h1>
-                <p class="pb-10 text-slate-600 font-medium text-sm">Start from 33 USD for project base or 35 USD per hour</p>
+                <p class="pb-8 text-slate-600 font-medium text-sm">Start from 33 USD for project base or 35 USD per hour</p>
                 <h2 class="px-10 text-lg text-slate-600 absolute bottom-40">More Service :</h2>
-                <div class="pt-10 font-bold text-base">
+                <div class="pt-10 font-bold text-xs">
                     <p>Technical Assistans</p>
                     <p>Support Assistans</p>
                     <p>VIP Assistans</p>
@@ -136,53 +195,53 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
     <!-- Service End -->
 
 
     <!-- Job Desc Start -->
     <div class="w-full">
-        <div class="text-center pt-36">
-            <h1 class="py-6 text-5xl font-semibold">What We Do</h1>
-            <p class="w-[700px] mx-auto text-slate-600 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis illo expedita voluptatibus laborum adipisci quas sequi eveniet id doloremque distinctio.</p>
+        <div class="text-center pt-24 lg:pt-36">
+            <h1 class="py-6 text-4xl font-semibold lg:text-5xl">What We Do</h1>
+            <p class="w-full mx-auto text-slate-600 text-base lg:w-[700px] lg:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis illo expedita voluptatibus laborum adipisci quas sequi eveniet id doloremque distinctio.</p>
         </div>
 
-        <div class="w-[1200px] pt-16 mx-auto relative">
-            <div class="w-[1000px] h-0.5 bg-slate-300 mx-auto absolute top-[140px] left-[100px] -z-10"></div>
-            <div class=" mx-auto flex flex-wrap items-center justify-between ">
-                <div class="w-1/5 text-center flex flex-col items-center justify-center">
+         <div class="w-full pt-16 mx-auto relative lg:w-[1200px]">
+            <div class="hidden w-full h-0.5 bg-slate-300 mx-auto absolute top-[140px] left-[100px] -z-10 lg:w-[1000px]"></div>
+            <div class=" mx-auto flex flex-col items-center lg:flex-wrap lg:justify-between lg:flex-row">
+                <div class="w-full text-center flex flex-col items-center justify-center lg:w-1/5">
                     <div class="w-[150px] ">
                         <img src="./components/design.png" alt="Design-Job">
                     </div>
-                    <h1 class="pt-10 pb-2 text-lg font-bold text-slate-800">Design</h1>
-                    <p class="text-sm text-slate-500">Create Wireframe Display Designs And Initial UI Designs For Websites</p>
+                    <h1 class="pt-5 pb-2 text-lg font-bold text-slate-800 lg:pt-10 ">Design</h1>
+                    <p class="w-1/2 text-sm pb-10 text-slate-500 lg:w-full lg:text-xs">Create Wireframe Display Designs And Initial UI Designs For Websites</p>
                 </div>
-                <div class="w-1/5 text-center flex flex-col items-center justify-center">
+                <div class="w-full text-center flex flex-col items-center justify-center lg:w-1/5">
                     <div class="w-[150px] ">
                         <img src="./components/FE.png" alt="Design-Job">
                     </div>
-                    <h1 class="pt-10 pb-2 text-lg font-bold text-slate-800">Front-End</h1>
-                    <p class="text-sm text-slate-500">Create Wireframe Display Designs And Initial UI Designs For Websites</p>
+                    <h1 class="pt-5 pb-2 text-lg font-bold text-slate-800 lg:pt-10">Front-End</h1>
+                    <p class="w-1/2 text-sm pb-10 text-slate-500 lg:w-full lg:text-xs">Create Wireframe Display Designs And Initial UI Designs For Websites</p>
                 </div>
-                <div class="w-1/5 text-center flex flex-col items-center justify-center">
+                <div class="w-full text-center flex flex-col items-center justify-center lg:w-1/5">
                     <div class="w-[150px] ">
                         <img src="./components/BE.png" alt="Design-Job">
                     </div>
-                    <h1 class="pt-10 pb-2 text-lg font-bold text-slate-800">Back-End</h1>
-                    <p class="text-sm text-slate-500">Create Wireframe Display Designs And Initial UI Designs For Websites</p>
+                    <h1 class="pt-5 pb-2 text-lg font-bold text-slate-800 lg:pt-10">Back-End</h1>
+                    <p class="w-1/2 text-sm pb-10 text-slate-500 lg:w-full lg:text-xs">Create Wireframe Display Designs And Initial UI Designs For Websites</p>
                 </div>
-                <div class="w-1/5 text-center flex flex-col items-center justify-center">
+                <div class="w-full text-center flex flex-col items-center justify-center lg:w-1/5">
                     <div class="w-[150px] ">
                         <img src="./components/Check.png" alt="Design-Job">
                     </div>
-                    <h1 class="pt-10 pb-2 text-lg font-bold text-slate-800">Check Test</h1>
-                    <p class="text-sm text-slate-500">Create Wireframe Display Designs And Initial UI Designs For Websites</p>
+                    <h1 class="pt-5 pb-2 text-lg font-bold text-slate-800 lg:pt-10">Check Test</h1>
+                    <p class="w-1/2 text-sm pb-10 text-slate-500 lg:w-full lg:text-xs">Create Wireframe Display Designs And Initial UI Designs For Websites</p>
                 </div>
             </div>
         </div>
 
-        <div class="w-[1200px] rounded-xl border border-slate-800 mt-40 mx-auto bg-gradient-to-bl from-white via-sky-200 to-purple-200">
-            <div class="px-10 flex flex-wrap items-center justify-between">
+        <div class="w-full rounded-xl border border-slate-800 mt-16 mx-auto bg-gradient-to-bl from-white via-sky-200 to-purple-200 lg:w-[1200px]">
+            <div class="px-8 flex flex-wrap items-center justify-between lg:px-10">
                 <div class="w-[500px]">
                     <h1 class="pt-10 text-4xl font-bold">Retainer Orely Study</h1>
                     <p class="py-8 text-slate-500 text-sm">Retainer Orely Studio is a website from the Orely company that we developed into Code.</p>
@@ -194,14 +253,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="py-10 relative ">
+                <div class="py-5 relative lg:py-10">
                     <img src="./components/laptop.png" alt="Laptop" class="w-[500px]">
-                    <img src="./components/phone.png" alt="Phone" class="w-[150px] absolute right-0 top-16">
+                    <img src="./components/phone.png" alt="Phone" class="w-[150px] absolute right-0 top-2 lg:top-16">
                 </div>
             </div>
         </div>
 
-        <div class="w-[1200px] rounded-xl border border-slate-800 mt-20 mx-auto bg-gradient-to-bl from-red-200 via-orange-200 to-yellow-200">
+        <div class="w-full rounded-xl border border-slate-800 mt-20 mx-auto bg-gradient-to-bl from-red-200 via-orange-200 to-yellow-200 lg:w-[1200px]">
             <div class="px-10 flex flex-wrap items-center justify-between">
                 <div class="w-[500px]">
                     <h1 class="pt-10 text-4xl font-bold">Federasi Ice Skating Indonesia</h1>
@@ -216,32 +275,39 @@
                 </div>
                 <div class="py-10 relative ">
                     <img src="./components/macbook.png" alt="Laptop" class="w-[500px]">
-                    <img src="./components/iphone.png" alt="Phone" class="w-[150px] absolute right-0 top-16">
+                    <img src="./components/iphone.png" alt="Phone" class="w-[150px] absolute right-0 top-9 lg:top-16">
                 </div>
             </div>
         </div>
 
-        <div class="flex flex-wrap items-center justify-center pt-32">
-            <button class="px-6 py-3 bg-sky-400 rounded-full text-white font-normal hover:bg-sky-600">Our Work</button>
+        <div class="flex flex-wrap items-center justify-center pt-14 lg:pt-32">
+            <button class="px-20 py-3 bg-sky-400 rounded-full text-white font-normal hover:bg-sky-600 lg:px-6">Our Work</button>
         </div>
     </div>
     <!-- Job Desc End -->
 
 
     <!-- Comment Start -->
-    <div class="pt-32 px-40">
-        <div class="w-[500px] h-[120px]  text-4xl font-semibold">
+    <div class="pt-20 px-10 lg:pt-32 lg:px-40">
+        <div class="w-full h-[120px]  text-3xl font-semibold lg:w-[500px] lg:text-4xl">
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-blue-400">What Do People Say About </span>The Mangcoding Team?
         </div>
-        <div class="grid grid-cols-3 grid-rows-2 gap-5">
-            <div class="px-6 py-4 rounded-3xl shadow-xl  flex items-center bg-white">
+        <div class="grid gap-7 lg:grid-cols-2 lg:gap-5">
+            <div class="px-6 py-4 rounded-3xl shadow-xl flex items-center bg-white lg:h-[100px]">
                 <img class="w-[80px] mr-4" src="./components/foto1.png" alt="Avatar">
                 <div class="text-sm">
                   <p class="text-lg font-semibold text-black leading-none pb-1">Riko Sapto Dimo</p>
                   <p class="text-slate-400">Managing Director Orely.co</p>
                 </div>
             </div>
-            <div class="row-span-2 col-span-2 px-6 py-6 border border-slate-300 rounded-2xl relative">
+            <div class="px-6 py-4 flex items-center lg:h-[100px]">
+                <img class="w-[80px] mr-4" src="./components/foto2.png" alt="Avatar2">
+                <div class="text-sm">
+                    <p class="text-lg font-semibold text-black leading-none pb-1">Riko Sapto Dimo</p>
+                    <p class="text-slate-400">Managing Director Orely.co</p>
+                </div>
+            </div>
+            <div class=" px-6 py-6 border border-slate-300 rounded-2xl relative lg:row-span-2 lg:col-span-2 ">
                 <img class="w-[50px]" src="./components/quotesup.png" alt="quotes">
                 <p class="text-2xl font-semibold">It was a great experience to work with Mangcoding, we love the details result, and profesionalism.</p>
                 <img class="w-[50px] absolute right-10 pb-10" src="./components/quotesdown.png" alt="quotes">
@@ -254,25 +320,18 @@
                     <img class="w-[20px] h-[20px]" src="./components/star.png" alt="star">
                 </div>
             </div>
-            <div class="px-6 py-4 flex items-center">
-                <img class="w-[80px] mr-4" src="./components/foto2.png" alt="Avatar2">
-                <div class="text-sm">
-                  <p class="text-lg font-semibold text-black leading-none pb-1">Riko Sapto Dimo</p>
-                  <p class="text-slate-400">Managing Director Orely.co</p>
-                </div>
-            </div>
         </div>
     </div>
     <!-- Comment End -->
 
 
     <!-- Blog Start -->
-    <div class="pt-20 px-40">
+    <div class="pt-5 px-20 mx-auto lg:px-40">
         <div class="text-center pt-36 pb-10">
-            <h1 class="py-6 text-5xl font-semibold">Our Blog</h1>
+            <h1 class="pb-6 text-4xl font-semibold lg:text-5xl">Our Blog</h1>
         </div>
-        <div class="flex flex-wrap items-start justify-between">
-            <div class="w-[375px] rounded-xl shadow-xl overflow-hidden">
+        <div class="flex flex-wrap gap-2 items-start justify-between">
+            <div class="w-[450px] rounded-xl shadow-xl overflow-hidden lg:w-[300px]">
                 <img src="./components/blog1.png" alt="Blog1">
                 <div class="p-4">
                     <h1 class="text-lg font-bold">8 Alasan Pentingnya Melakukan Pencadangan Situs Web</h1>
@@ -280,7 +339,7 @@
                     <p class="pt-4 text-slate-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, officia?</p>
                 </div>
             </div>
-            <div class="w-[375px] rounded-xl shadow-xl overflow-hidden">
+            <div class="w-[450px] rounded-xl shadow-xl overflow-hidden lg:w-[300px]">
                 <img src="./components/blog2.png" alt="Blog2">
                 <div class="p-4">
                     <h1 class="text-lg font-bold">8 Alasan Pentingnya Melakukan Pencadangan Situs Web</h1>
@@ -288,7 +347,7 @@
                     <p class="pt-4 text-slate-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, officia?</p>
                 </div>
             </div>
-            <div class="w-[375px] rounded-xl shadow-xl overflow-hidden">
+            <div class="w-[450px] rounded-xl shadow-xl overflow-hidden lg:w-[300px]">
                 <img src="./components/blog3.png" alt="Blog3">
                 <div class="p-4">
                     <h1 class="text-lg font-bold">8 Alasan Pentingnya Melakukan Pencadangan Situs Web</h1>
@@ -297,24 +356,24 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-wrap items-center justify-center pt-20">
-            <button class="px-6 py-3 bg-sky-400 rounded-full text-white font-normal hover:bg-sky-600">Our Work</button>
+        <div class="flex flex-wrap items-center justify-center pt-10 lg:pt-20">
+            <button class="px-20 py-3 mb-8 bg-sky-400 rounded-full text-white font-normal hover:bg-sky-600 lg:px-6">Our Work</button>
         </div>
     </div>
     <!-- Blog End -->
 
 
     <!-- Footer Start -->
-    <footer class="w-full pb-10 mt-24">
-        <div class="flex flex-wrap items-center justify-between bg-gradient-to-bl from-white via-sky-100 to-purple-100">
-            <div class="w-[850px] mx-auto pt-20 pr-44 pb-10">
-                <h1 class="text-4xl font-bold py-4">Let's build a website with Mangcoding</h1>
-                <p class="text-lg text-slate-700">Mangcoding team will help you in branding your product</p>
+    <footer class="w-full  lg:mt-24 ">
+        <div class="pl-5 flex flex-wrap items-center justify-between bg-gradient-to-bl from-white via-sky-100 to-purple-100">
+            <div class="w-full mx-auto pt-10 pr-20 pb-10 lg:w-[850px] lg:pt-20 lg:pr-44 lg:pb-10">
+                <h1 class="text-3xl font-bold py-4 lg:text-4xl ">Let's build a website with Mangcoding</h1>
+                <p class="text-base text-slate-700 lg:text-lg">Mangcoding team will help you in branding your product</p>
             </div>
-            <button class="px-6 py-3 bg-sky-400 rounded-full text-white font-normal mx-auto hover:bg-sky-600">Build Website</button>
+            <button class="px-20 py-3 mb-5 bg-sky-400 rounded-full text-white font-normal mx-auto hover:bg-sky-600 lg:px-6">Build Website</button>
         </div>
-        <div class="px-32  bg-teal-700">
-            <div class="py-16 flex flex-wrap">
+        <div class=" bg-teal-700">
+            <div class="py-16 flex flex-wrap items-center justify-center ">
                 <div class="text-white ">
                     <div class="text-lg font-semibold flex gap-5 items-center">
                         <img class="w-[60px]" src="./components/logo.svg" alt="Logo">Mangcoding
@@ -328,9 +387,9 @@
                     </div>
                 </div>
                 
-                <div class="pl-24 text-white text-base">
+                <div class="pl-16 text-white text-base">
                     <h1 class="py-4 font-semibold">Mangcoding</h1>
-                    <ul class="font-normal">
+                    <ul class="font-normal lg:text-sm">
                         <li class="py-1 text-slate-300 hover:text-slate-500"><a href="#">Home</a></li>
                         <li class="py-1 text-slate-300 hover:text-slate-500"><a href="#">About</a></li>
                         <li class="py-1 text-slate-300 hover:text-slate-500"><a href="#">Services</a></li>
@@ -341,9 +400,9 @@
                     </ul>
                 </div>
 
-                <div class="pl-14 text-white text-base">
+                <div class="pl-10 text-white text-base lg:pl-8 lg:mb-[55px]">
                     <h1 class="py-4 font-semibold">Service</h1>
-                    <ul class="font-normal">
+                    <ul class="font-normal lg:text-sm">
                         <li class="py-1 text-slate-300 hover:text-slate-500"><a href="#">Costum WordPress Theme Development</a></li>
                         <li class="py-1 text-slate-300 hover:text-slate-500"><a href="#">Costum Plugin WordPress</a></li>
                         <li class="py-1 text-slate-300 hover:text-slate-500"><a href="#">Costum Shopify Theme Development</a></li>
@@ -352,25 +411,25 @@
                     </ul>
                 </div>
 
-                <div class="pl-14 text-white text-base">
+                <div class="pl-4 text-white text-base lg:mb-[100px]">
                     <h1 class="pt-4 font-semibold">Trusted Partner</h1>
                     <img class="pt-4 w-[110px]" src="./components/orely.png" alt="Orely">
-                    <img class="pt-4 w-[110px]" src="./components/kiwa.png" alt="Kiwa">
+                    <img class="pt-4 w-[100px]" src="./components/kiwa.png" alt="Kiwa">
                 </div>
 
-                <div class="w-[250px] pl-14 text-white text-base">
+                <div class="w-[250px]  text-white text-base lg:pl-4 lg:-mb-[20px]">
                     <h1 class="py-4 font-semibold">Service</h1>
-                    <div class="flex gap-5 items-center text-slate-300">
+                    <div class="flex gap-5 items-center text-slate-300 lg:text-sm">
                         <img class="w-[30px]" src="./components/mail.png" alt="Mail">hello@mangcoding.com
                     </div>
                     <div class="py-4 flex gap-5 items-center text-slate-300">
                         <img class="w-[30px]" src="./components/phonecall.png" alt="PhoneNumber">
-                        <p class="w-[200px] pt-4 flex-none">
+                        <p class="w-[200px] pt-4 flex-none lg:text-sm">
                             <span class="pr-20">0266 - 6532078</span>
                             <span>WA : 0857-5940-2332</span>
                         </p>
                     </div>
-                    <div class="py-4 flex gap-5 items-center text-slate-300">
+                    <div class="py-4 flex gap-5 items-center text-slate-300 lg:text-sm">
                         <img class="w-[30px]" src="./components/location.png" alt="Location">PT Anugrah Kreasi Digital, Karang Tengah, Cibadak - Sukabumi
                     </div>
                 </div>
@@ -381,6 +440,11 @@
         </div>
     </footer>
     <!-- Footer End -->
+
+
+
+    <!-- Script js -->
+    <script src="app.js"></script>
 
 </body>
 </html>
