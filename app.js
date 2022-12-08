@@ -19,3 +19,31 @@ hamburger.addEventListener('click', function(){
     hamburger.classList.toggle('hamburger-click');
     navbar.classList.toggle('hidden');
 });
+
+
+// Pop Up
+const getStarted = document.querySelectorAll('.get-started');
+const started = document.getElementById('started');
+const close = document.querySelector('.close');
+
+for (let index = 0; index < getStarted.length; index++) {
+    getStarted[index].addEventListener('click', function(){
+        started.classList.remove('hidden');
+        
+        close.addEventListener('click', function(){ 
+            started.classList.add('hidden');
+        });
+     
+    });
+    
+}
+ 
+
+// Pop Up Search
+const search = document.getElementById('search');
+const searchPopUp = document.querySelector('.search-popup');
+
+search.addEventListener('click', function(){
+    searchPopUp.classList.toggle('hidden');
+
+});
